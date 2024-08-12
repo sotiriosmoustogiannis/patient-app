@@ -1,11 +1,18 @@
 import express from 'express';
 import dotenv from 'dotenv';
+import cors from 'cors';
 
 // --------------------//
 // Globals and Configs //
 // --------------------//
 
 const app = express();
+
+app.use(cors({
+  origin: 'http://localhost:5173', // Allow only this origin
+  methods: ['GET', 'POST'],        // Allow only these methods
+}));
+
 app.use(express.json()) // Notice express.json middleware
 dotenv.config();
 
