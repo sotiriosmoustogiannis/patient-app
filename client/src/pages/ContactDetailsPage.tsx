@@ -1,21 +1,21 @@
 import React from 'react';
 import useFetchContacts from '../hooks/api/useFetchContacts';
 import { Contact } from '../interfaces/contactType';
+import '../styles/ContactDetailsPage.css'; 
 
-const ContactDeatailsPage: React.FC = () => {
+const ContactDetailsPage: React.FC = () => {
   const { contacts, isLoading, error } = useFetchContacts();
 
   return (
-    <div>
+    <div className="contact-details-container">
       {!isLoading && !error ? (
         contacts.map((contact: Contact, index: number) => (
-          // its not best practise to put as key the index (it would be better a unique id), but its ok as the list is static
-          <ul key={index}>
-            <li>{contact.name}</li>
-            <li>{contact.surname}</li>
-            <li>{contact.birthDate}</li>
-            <li>{contact.text}</li>
-          </ul>
+        // its not best practise to put as key the index (it would be better a unique id), but its ok as the list is static
+          <div className="contact-card" key={index}>
+            <h2>{contact.name} {contact.surname}</h2>
+            <p><strong>Birth Date:</strong> {contact.birthDate}</p>
+            <p><strong>Details:</strong> {contact.text}</p>
+          </div>
         ))
       ) : (
         <p>{error ? error : 'Loading...'}</p>
@@ -24,4 +24,4 @@ const ContactDeatailsPage: React.FC = () => {
   );
 };
 
-export default ContactDeatailsPage;
+export default ContactDetailsPage;

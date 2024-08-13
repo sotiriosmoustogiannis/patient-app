@@ -1,10 +1,11 @@
 import React from "react";
 import { FormInputProps } from "../interfaces/formInputProps.ts";
+import '../styles/ContactFormPage.css'; // Import the CSS file
 
 const FormInput: React.FC<FormInputProps> = ({ label, name, type, placeholder, value, onChange, isValid, maxLength, errorMessage }) => {
   return (
-    <div>
-      <label htmlFor={name}>{label}: </label>
+    <div className="contact-form-input">
+      <label htmlFor={name}>{label}</label>
       <input
         type={type}
         placeholder={placeholder}
@@ -15,7 +16,7 @@ const FormInput: React.FC<FormInputProps> = ({ label, name, type, placeholder, v
         value={value}
       />
       {!isValid && (
-        <p style={{ color: 'red' }}>{errorMessage}</p>
+        <p className="error-message">{errorMessage}</p>
       )}
     </div>
   );
