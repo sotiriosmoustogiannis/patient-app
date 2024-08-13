@@ -1,10 +1,12 @@
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import './App.css'
 import ContactFormPage from './pages/ContactFormPage';
-import ContactDeatailsPage from './pages/ContactDetailsPage';
+import ContactDetailsPage from './pages/ContactDetailsPage';
 import NotFoundPage from './pages/NotFoundPage';
+import Navbar from './components/Navbar';
+import './styles/Navbar.css';
 
 const App: React.FC = () => {
 
@@ -12,6 +14,7 @@ const App: React.FC = () => {
     <>
       <Router>
       <div className="App">
+        <Navbar />
         <h1 className='title'>Take Home App</h1>
         <Routes>
           <Route 
@@ -20,7 +23,7 @@ const App: React.FC = () => {
             />
           <Route
             path = "/contacts"
-            element = {<ContactDeatailsPage/>}
+            element = {<ContactDetailsPage/>}
           />
           <Route 
             path = '*' 
