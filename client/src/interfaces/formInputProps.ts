@@ -1,11 +1,11 @@
 export interface FormInputProps {
-  label: string;
-  name: string;
   type: string;
-  placeholder: string;
+  name: string;
   value: string;
-  onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  label: string;
   isValid?: boolean;
-  maxLength?: number
+  onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  maxLength?: number;
+  placeholder: string;
   errorMessage?: string | null;
 };
