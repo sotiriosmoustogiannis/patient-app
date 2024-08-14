@@ -1,0 +1,30 @@
+.spinner-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.spinner {
+  border: 8px solid #f3f3f3;
+  /* Light gray */
+  border-top: 5px solid #3498db;
+  /* Blue */
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  animation: spin 1s linear infinite;
+  margin: 0 auto;
+  /* Center the spinner */
+}
+
+@media (max-width: 768px) {
+  .spinner {
+    width: 40px;
+    height: 40px;
+  }
+}
