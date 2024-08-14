@@ -4,5 +4,5 @@ export interface Contact {
     phone: string;
     birthDate: string;
     text: string;
-    tsp: number;
+    tsp?: number;
   };

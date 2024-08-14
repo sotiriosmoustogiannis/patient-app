@@ -1,12 +1,13 @@
 import { validateRequiredField, validateOnlyLetters, validatePhoneNumber, validateBirthDate } from './validations';
 import { formatBirthDate, formatPhoneNumber } from './formats';
+import { FieldName } from '../types/types';
 
 export interface ValidationResult {
   error: string | null;
   formattedValue: string;
 }
 
-export const validateAndFormatField = (name: string, value: string): ValidationResult => {
+export const validateAndFormatField = (name: FieldName, value: string): ValidationResult => {
   let validationError: string | null = null;
   let formattedValue = value;
 
