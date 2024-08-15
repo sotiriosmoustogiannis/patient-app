@@ -1,0 +1,29 @@
+.contact-form-input {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.contact-form-input label {
+  font-size: 1.2rem;
+  color: #2c3e50;
+  font-weight: 500;
+}
+
+.contact-form-input input {
+  padding: 14px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  color: #333;
+}
+
+.contact-form-input input:focus {
+  border-color: #3498db;
+  outline: none;
+}
+
+.error-message {
+  color: #e74c3c;
+  margin-top: 4px;
+}

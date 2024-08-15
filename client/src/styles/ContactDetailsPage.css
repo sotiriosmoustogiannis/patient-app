@@ -1,69 +1,17 @@
-/* Container for all contact details */
 .contact-details-container {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
+  flex-direction: column;
   padding: 20px;
-  border-radius: 12px;
-  background-color: #f0f5f6;
-  /* Light blue background for a fresh look */
+  max-width: 1200px;
+  min-width: 300px;
+  margin: 0 auto;
+  gap: 30px;
 }
 
-/* Each card representing a contact */
-.contact-card {
-  background-color: #ffffff;
-  border-radius: 10px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-  /* More prominent shadow */
-  margin: 15px;
-  padding: 20px;
-  width: 300px;
-  transition: transform 0.3s, box-shadow 0.3s;
-  /* Smooth transition for shadow */
-}
-
-/* Hover effect to make the card stand out */
-.contact-card:hover {
-  transform: translateY(-10px);
-  /* Slightly higher lift on hover */
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
-  /* Deeper shadow on hover */
-}
-
-/* Heading for the name */
-.contact-card h2 {
-  margin: 0 0 10px 0;
-  color: #2c3e50;
-  /* Darker blue-gray for a sophisticated look */
-  font-size: 26px;
-  font-weight: 700;
-  border-bottom: 2px solid #3498db;
-  /* Bright blue border for a pop of color */
-  padding-bottom: 10px;
-}
-
-/* General text style inside the card */
-.contact-card p {
-  margin: 10px 0;
-  font-size: 16px;
-  color: #34495e;
-  /* Medium blue-gray for better readability */
-}
-
-/* Bold text for labels */
-.contact-card p strong {
-  color: #2c3e50;
-  /* Matching the heading color */
-}
-
-/* Status message for loading or error */
-.status-message {
-  font-size: 18px;
-  color: #e74c3c;
-  /* Red color for errors */
+.contacts-error-message {
   text-align: center;
-  width: 100%;
+  font-size: 1.5rem;
+  color: #34495e;
   margin-top: 20px;
-  font-weight: 600;
-  /* Slightly bolder font for emphasis */
+  opacity: 0.8;
 }
