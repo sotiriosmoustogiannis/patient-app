@@ -1,8 +1,8 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import ContactDetailsPage from './pages/ContactDetailsPage';
-import ContactFormPage from './pages/ContactFormPage';
-import NotFoundPage from './pages/NotFoundPage';
-import Navbar from './components/Navbar';
+import ContactDetailsPage from './pages/ContactDetailsPage/ContactDetailsPage';
+import ContactFormPage from './pages/ContactFormPage/ContactFormPage';
+import NotFoundPage from './pages/NotFoundPage/NotFoundPage';
+import Navbar from './components/Navbar/Navbar';
 import './styles/Navbar.scss';
 import './App.scss'
 

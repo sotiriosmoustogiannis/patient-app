@@ -1,8 +1,8 @@
 import React from 'react';
-import Spinner from '../components/Spinner';
-import ContactDetailsCard from '../components/ContactDetailsCard';
-import useFetchContacts from '../hooks/api/useFetchContacts';
-import { Contact } from '../interfaces/contact';
+import Spinner from '../../components/Spinner/Spinner';
+import ContactDetailsCard from '../../components/ContactDetailsCard/ContactDetailsCard';
+import useFetchContacts from '../../hooks/api/useFetchContacts';
+import { Contact } from '../../interfaces/contact';
 import '../styles/ContactDetailsPage.scss'; 
 
 const ContactDetailsPage: React.FC = () => {

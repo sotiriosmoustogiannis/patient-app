@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { validateAndFormatField } from '../utils/validationHelpers';
-import useCreateContact from '../hooks/api/useCreateContact';
-import FormInput from '../components/FormInput';
-import { Contact } from '../interfaces/contact';
-import { FieldName } from '../types/types';
+import { validateAndFormatField } from '../../utils/validationHelpers';
+import useCreateContact from '../../hooks/api/useCreateContact';
+import FormInput from '../../components/FormInput/FormInput';
+import { Contact } from '../../interfaces/contact';
+import { FieldName } from '../../types/types';
 import '../styles/ContactFormPage.scss';
-import { FormInputProps } from '../interfaces/formInputProps';
+import { FormInputProps } from '../../interfaces/formInputProps';
 
 interface FormErrors {
   [key: string]: string | null;
