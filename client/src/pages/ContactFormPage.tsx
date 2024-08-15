@@ -5,7 +5,7 @@ import useCreateContact from '../hooks/api/useCreateContact';
 import FormInput from '../components/FormInput';
 import { Contact } from '../interfaces/contact';
 import { FieldName } from '../types/types';
-import '../styles/ContactFormPage.css';
+import '../styles/ContactFormPage.scss';
 import { FormInputProps } from '../interfaces/formInputProps';
 
 interface FormErrors {

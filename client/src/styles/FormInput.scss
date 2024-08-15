@@ -1,0 +1,31 @@
+@import 'src/variables';
+
+.contact-form-input {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  label {
+    font-size: 1.2rem;
+    color: $primary-color;
+    font-weight: 500;
+  }
+
+  input {
+    padding: 14px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    color: $text-color;
+
+    &:focus {
+      border-color: $secondary-color;
+      outline: none;
+    }
+  }
+
+  .error-message {
+    color: $error-color;
+    margin-top: 4px;
+  }
+}

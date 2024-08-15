@@ -3,8 +3,8 @@ import ContactDetailsPage from './pages/ContactDetailsPage';
 import ContactFormPage from './pages/ContactFormPage';
 import NotFoundPage from './pages/NotFoundPage';
 import Navbar from './components/Navbar';
-import './styles/Navbar.css';
-import './App.css'
+import './styles/Navbar.scss';
+import './App.scss'
 
 const App: React.FC = () => {
 

@@ -1,0 +1,36 @@
+@import 'src/variables';
+
+$link-color: #fff;
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 64px;
+  background-color: $primary-color;
+  padding: 10px 20px;
+  color: $link-color;
+
+  .navbar-left,
+  .navbar-right {
+    display: flex;
+    align-items: center;
+  }
+
+  .nav-link {
+    text-decoration: none;
+    color: $link-color;
+    font-size: 1rem;
+    margin: 0 15px;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: $secondary-color;
+    }
+  }
+
+  .nav-title {
+    font-weight: 700;
+    font-size: 1.5rem;
+  }
+}
