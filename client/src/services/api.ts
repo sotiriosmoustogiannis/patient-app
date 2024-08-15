@@ -1,10 +1,10 @@
 import axios from "axios";
 import { Contact } from "../interfaces/contact";
-// import appConfig from "../configs/appConfig";
+import appConfig from "../configs/appConfig";
 
 export const createContact = async (contact: Contact) => {
   try {
-    return await axios.post('http://localhost:8081/contacts', contact, {
+    return await axios.post( `${appConfig.BACK_HOST_API}/contacts`, contact, {
       headers: {
         'Content-Type': 'application/json',
       },
@@ -16,7 +16,7 @@ export const createContact = async (contact: Contact) => {
 
 export const fetchContacts = async () => {
   try {
-    return await axios.get('http://localhost:8081/contacts');
+    return await axios.get(`${appConfig.BACK_HOST_API}/contacts`);
   } catch (error) {
     throw new Error(`Failed to fetch contacts: ${error}`);
   }
