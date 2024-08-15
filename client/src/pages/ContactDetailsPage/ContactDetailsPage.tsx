@@ -3,7 +3,7 @@ import Spinner from '../../components/Spinner/Spinner';
 import ContactDetailsCard from '../../components/ContactDetailsCard/ContactDetailsCard';
 import useFetchContacts from '../../hooks/api/useFetchContacts';
 import { Contact } from '../../interfaces/contact';
-import '../styles/ContactDetailsPage.scss'; 
+import './ContactDetailsPage.scss'; 
 
 const ContactDetailsPage: React.FC = () => {
   const { contacts, isLoading, error } = useFetchContacts();

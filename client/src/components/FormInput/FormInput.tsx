@@ -1,6 +1,6 @@
 import React from "react";
 import { FormInputProps } from "../../interfaces/formInputProps";
-import '../styles/FormInput.scss';
+import './FormInput.scss';
 
 const FormInput: React.FC<FormInputProps> = ({
   type,

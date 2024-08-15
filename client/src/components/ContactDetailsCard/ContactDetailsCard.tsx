@@ -1,6 +1,6 @@
 import React from "react";
 import { Contact } from "../../interfaces/contact";
-import '../styles/ContactDetailsCard.scss'; 
+import './ContactDetailsCard.scss'; 
 
 interface ContactDetailsCardProps {
   contact: Contact;
