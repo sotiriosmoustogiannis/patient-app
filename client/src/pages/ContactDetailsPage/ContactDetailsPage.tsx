@@ -10,15 +10,15 @@ const ContactDetailsPage: React.FC = () => {
 
   /* 
     To improve code readability and maintainability, I have separated 
-    the rendering logic into distinct functions. 
+    the rendering components into distinct functions. 
   */
-  const renderError = () => <p className="contacts-error-message">{error}</p>;
 
-  const renderNoContactsMessage = () => <p className='contacts-error-message'>No contacts available.</p>;
+  const renderError = (error: string|null) => <p className="contacts-error-message">{error}</p>;
 
   const renderContacts = () => (
     contacts.map((contact: Contact, index: number) => (
-      //index is not recommended to add on key is not good practise, but in this case thwe index we will not have any change, if needed the add an unique id on contacts
+      // Index is not recommended to add as a key (is not good practise), but in our case the index will not be changed, 
+      // If is needed, we can save a unique id for every record on the database to use as a key (ex. if we want to delete a contact)
       <ContactDetailsCard
         key={index}
         contact={contact}
@@ -28,8 +28,8 @@ const ContactDetailsPage: React.FC = () => {
 
   // Render the appropriate UI components based on the current state of data fetching
   if (isLoading) return <Spinner />;
-  if (error) return renderError();
-  if (contacts.length === 0) return renderNoContactsMessage();
+  if (error) return renderError(error);
+  if (contacts.length === 0) return renderError('No contacts available.');
 
   return (
     <div className="contact-details-container">  

@@ -4,12 +4,12 @@ $link-color: #fff;
 
 .navbar {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  height: 64px;
+  justify-content: space-between;
   background-color: $primary-color;
-  padding: 10px 20px;
+  height: 64px;
   color: $link-color;
+  padding: 10px 20px;
 
   .navbar-left,
   .navbar-right {
@@ -22,7 +22,7 @@ $link-color: #fff;
     color: $link-color;
     font-size: 1rem;
     margin: 0 15px;
-    transition: color 0.3s ease;
+    transition: color 0.4s ease;
 
     &:hover {
       color: $secondary-color;

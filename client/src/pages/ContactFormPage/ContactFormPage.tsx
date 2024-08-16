@@ -2,16 +2,16 @@ import React, { useState, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { debounce } from 'lodash';
 import { validateAndFormatField } from '../../utils/validationHelpers';
+import { FormInputProps } from '../../interfaces/formInputProps';
 import useCreateContact from '../../hooks/api/useCreateContact';
 import FormInput from '../../components/FormInput/FormInput';
 import { Contact } from '../../interfaces/contact';
 import { FieldName } from '../../types/types';
 import './ContactFormPage.scss';
-import { FormInputProps } from '../../interfaces/formInputProps';
 
-interface FormErrors {
+interface FormFieldErrors {
   [key: string]: string | null;
-}
+};
 
 const ContactFormPage: React.FC = () => {
   const navigate = useNavigate();
@@ -24,7 +24,7 @@ const ContactFormPage: React.FC = () => {
     text: ""
   });
 
-  const [errors, setErrors] = useState<FormErrors>({});
+  const [fieldErrors, setFieldErrors] = useState<FormFieldErrors>({});
   const [formError, setFormError] = useState<string | null>(null);
 
   const { createContact, isLoading, error } = useCreateContact({
@@ -34,12 +34,11 @@ const ContactFormPage: React.FC = () => {
     }
   });
 
-  // Debounced validation function
+  // Debounced function that delays form fields validation errors
   const debouncedValidateField = useCallback(
-    debounce((fieldName: FieldName, value: string) => {
-      const { error: validationError } = validateAndFormatField(fieldName, value);
+    debounce((fieldName: FieldName, validationError: string|null) => {
 
-      setErrors((prevErrors) => ({
+      setFieldErrors((prevErrors) => ({
         ...prevErrors,
         [fieldName]: validationError,
       }));
@@ -51,20 +50,21 @@ const ContactFormPage: React.FC = () => {
     const { name, value } = evt.target;
     const fieldName = name as FieldName;
 
-    const { formattedValue } = validateAndFormatField(fieldName, value);
+    const { formattedValue, error: validationError } = validateAndFormatField(fieldName, value);
 
     setContactFormData((currData) => ({
       ...currData,
       [fieldName]: formattedValue,
     }));
 
-    debouncedValidateField(fieldName, formattedValue);
+    debouncedValidateField(fieldName, validationError);
   };
 
   const handleSubmit = async (evt: React.FormEvent) => {
     evt.preventDefault();
 
-    const hasErrors = Object.values(errors).some((error) => error !== null);
+    const hasErrors = Object.values(fieldErrors).some((error) => error !== null);
+    
     const hasContactEmptyField = Object.values(contactFormData).some(
       (contact) => contact === ""
     );
@@ -102,8 +102,8 @@ const ContactFormPage: React.FC = () => {
           placeholder: 'Enter your name',
           value: contactFormData.name,
           onChange: handleChange,
-          isValid: !errors.name,
-          errorMessage: errors.name,
+          isValid: !fieldErrors.name,
+          errorMessage: fieldErrors.name,
         })}
         {renderFormInput({
           label: 'Surname',
@@ -112,8 +112,8 @@ const ContactFormPage: React.FC = () => {
           placeholder: 'Enter your surname',
           value: contactFormData.surname,
           onChange: handleChange,
-          isValid: !errors.surname,
-          errorMessage: errors.surname,
+          isValid: !fieldErrors.surname,
+          errorMessage: fieldErrors.surname,
         })}
         {renderFormInput({
           label: 'Phone',
@@ -122,9 +122,9 @@ const ContactFormPage: React.FC = () => {
           placeholder: 'Enter your phone number',
           value: contactFormData.phone,
           onChange: handleChange,
-          isValid: !errors.phone,
+          isValid: !fieldErrors.phone,
           maxLength: 14,
-          errorMessage: errors.phone,
+          errorMessage: fieldErrors.phone,
         })}
         {renderFormInput({
           label: 'Birth Date',
@@ -133,9 +133,9 @@ const ContactFormPage: React.FC = () => {
           placeholder: 'Enter your birth date (YYYY-MM-DD)',
           value: contactFormData.birthDate,
           onChange: handleChange,
-          isValid: !errors.birthDate,
+          isValid: !fieldErrors.birthDate,
           maxLength: 10,
-          errorMessage: errors.birthDate,
+          errorMessage: fieldErrors.birthDate,
         })}
         {renderFormInput({
           label: 'Text',
@@ -144,8 +144,8 @@ const ContactFormPage: React.FC = () => {
           placeholder: 'Additional information',
           value: contactFormData.text,
           onChange: handleChange,
-          isValid: !errors.text,
-          errorMessage: errors.text,
+          isValid: !fieldErrors.text,
+          errorMessage: fieldErrors.text,
         })}
 
         <button type="submit" disabled={isLoading || !!error}>Add Contact</button>

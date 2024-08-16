@@ -1,6 +1,11 @@
-import { validateRequiredField, validateOnlyLettersSpaces, validatePhoneNumber, validateBirthDate } from './validations';
 import { formatBirthDate, formatPhoneNumber } from './formats';
 import { FieldName } from '../types/types';
+import { 
+  validateOnlyLettersSpaces, 
+  validateRequiredField, 
+  validatePhoneNumber, 
+  validateBirthDate 
+} from './validations';
 
 export interface ValidationResult {
   error: string | null;

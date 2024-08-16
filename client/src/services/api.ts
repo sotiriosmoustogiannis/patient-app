@@ -1,6 +1,6 @@
 import axios from "axios";
-import { Contact } from "../interfaces/contact";
 import appConfig from "../configs/appConfig";
+import { Contact } from "../interfaces/contact";
 
 export const createContact = async (contact: Contact) => {
   try {

@@ -61,5 +61,5 @@ const isFutureDate = (year: number, month: number, day: number): boolean => {
 
 // Function to check if a given year is a leap year
 const isLeapYear = (year: number): boolean => {
-  return (year % 4 === 0 && year % 100 !== 0) || year % 400 === 0;
+  return new Date(year, 1, 29).getMonth() === 1;
 };

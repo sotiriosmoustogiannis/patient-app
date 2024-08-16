@@ -6,17 +6,17 @@
   gap: 10px;
 
   label {
-    font-size: 1.2rem;
     color: $primary-color;
+    font-size: 1.2rem;
     font-weight: 500;
   }
 
   input {
-    padding: 14px;
     border: 1px solid #ccc;
+    color: $text-color;
     border-radius: 8px;
     font-size: 1.1rem;
-    color: $text-color;
+    padding: 14px;
 
     &:focus {
       border-color: $secondary-color;
