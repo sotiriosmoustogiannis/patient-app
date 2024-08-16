@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { debounce } from 'lodash';
 import { validateAndFormatField } from '../../utils/validationHelpers';
 import useCreateContact from '../../hooks/api/useCreateContact';
 import FormInput from '../../components/FormInput/FormInput';
@@ -33,24 +34,31 @@ const ContactFormPage: React.FC = () => {
     }
   });
 
+  // Debounced validation function
+  const debouncedValidateField = useCallback(
+    debounce((fieldName: FieldName, value: string) => {
+      const { error: validationError } = validateAndFormatField(fieldName, value);
+
+      setErrors((prevErrors) => ({
+        ...prevErrors,
+        [fieldName]: validationError,
+      }));
+    }, 400),
+    []
+  );
+
   const handleChange = (evt: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = evt.target;
     const fieldName = name as FieldName;
 
-    const { error: validationError, formattedValue } = validateAndFormatField(
-      fieldName, 
-      value
-    );
-
-    setErrors((prevErrors) => ({
-      ...prevErrors,
-      [fieldName]: validationError,
-    }));
+    const { formattedValue } = validateAndFormatField(fieldName, value);
 
     setContactFormData((currData) => ({
       ...currData,
       [fieldName]: formattedValue,
     }));
+
+    debouncedValidateField(fieldName, formattedValue);
   };
 
   const handleSubmit = async (evt: React.FormEvent) => {
@@ -80,9 +88,7 @@ const ContactFormPage: React.FC = () => {
     }
   };
 
-  const renderFormInput = (
-    props : FormInputProps
-  ) => (
+  const renderFormInput = (props: FormInputProps) => (
     <FormInput {...props} />
   );
 

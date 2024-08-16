@@ -1,4 +1,8 @@
-const appConfig = {
+interface AppConfig {
+  BACK_HOST_API: string;
+}
+
+const appConfig: AppConfig = {
   BACK_HOST_API: "http://localhost:8081",
 };
 
