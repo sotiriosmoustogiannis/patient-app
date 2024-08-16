@@ -110,3 +110,76 @@ npm start
         -d '{"name":"Best","surname":"FrontEndDev","phone":"+306971119977","birthDate":"2009-05-17","text":"Test"}' \
         -H 'Content-Type: application/json'
    ```
+
+# Patient App - Online Patient Info Application - React App
+
+## Project Description
+
+This online patient information application streamlines the management of medical appointments by offering a convenient platform for patients to submit their personal details. Patients can fill out a contact form that includes their name, surname, phone number, date of birth, and the reason for their visit to the doctor. This information allows doctors to access patient contact details and review the purpose of their visit in advance. The application is designed to offer a seamless and user-friendly experience, making it easier for both patients and doctors to manage appointments effectively.
+
+## Table of Contents
+
+- [Installation](#installation)
+- [Technologies](#technologies)
+- [Usage](#usage)
+- [Features](#features)
+- [Contributing](#contributing)
+
+## Installation
+
+### Prerequisites
+
+- [Node.js](https://nodejs.org/) (Recommended version: 14.x or higher)
+- [npm](https://www.npmjs.com/) (Comes with Node.js)
+
+### Getting Started
+
+1. Clone the repository using HTTPS:
+
+   ```bash
+   git clone https://github.com/sotiriosmoustogiannis/take-home-fronteng-c1a13.git
+
+- or Clone the repository using SSH Key:
+
+   ```bash
+   git clone https://github.com/sotiriosmoustogiannis/take-home-fronteng-c1a13.git
+
+2. Navigate to the Project Directory and Install Dependencies
+
+   ```bash
+   npm install
+
+3. Navigate to the server Directory and Install Dependencies
+
+   ```bash
+   cd server
+   npm install
+
+4. Navigate to the client Directory and Install Dependencies
+
+   ```bash
+   cd client
+   npm install
+
+5. Start both the Server and Client App
+
+   ```bash
+   cd ..
+   npm start
+
+5. Open a web browser and visit the URL shown in your terminal 
+   (usually http://localhost:5173/).
+
+## Technologies
+
+- Frontend: [React](https://reactjs.org/), [Vite](https://vitejs.dev/guide)
+
+## Usage
+
+- **Contact Form Page**: On the Contact Form page, patients can enter and submit their personal and contact details, including the reason for their visit. This submission enables doctors to review and assess the patient's case prior to the appointment, ensuring informed and effective consultations.
+
+- **Display Patient Contact Details**: On the Contact Details page, doctors can review information about each patient, including personal details and the reason for the visit. This allows healthcare providers to gain valuable insights into the patient's needs and prepare accordingly for the consultation.
+
+## Contributing
+
+Contributions to this project are welcome!
