@@ -122,7 +122,6 @@ This online patient information application streamlines the management of medica
 - [Installation](#installation)
 - [Technologies](#technologies)
 - [Usage](#usage)
-- [Features](#features)
 - [Contributing](#contributing)
 
 ## Installation
