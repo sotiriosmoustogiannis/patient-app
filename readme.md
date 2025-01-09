@@ -7,28 +7,24 @@
 
 **Tasks:**  
 1.  Build a "Contact Form" page that has the following five inputs: name, surname, phone, date of birth, and text. 
-2. `Optional` Build a second page that displays all the contact form submissions that are stored in our backend (which we have provided)
+2.  Build a second page that displays all the contact form submissions that are stored in our backend (which we have provided)
 
 **Specification:**
-
-Here are some functionalities that we would like you to implement:
 
 ✅ Field Validation:
 - Phone number: Optional country code and then 10 digits (we're thinking of only Greek phone numbers)
 - Birth date: Proper date format
 - Automatically add slashes or dots to the date field
 
-✅ At least one animation: For example, you can add a spinning circle when the form is being sent.
+✅ One animation: For example, you can add a spinning circle when the form is being sent.
 
-✅ Contact form look is important: We want the form to have a professional design that is visually appealing.
+✅ Contact form look is important: We have a professional design that is visually appealing.
 
-❌ Restrictions: We have two restrictions:
-- No validation library is allowed
-- No pre-made CSS is allowed (e.g., MUI)
+❌ Restrictions: Two restrictions:
+- No validation library.
+- No pre-made CSS. (e.g., MUI)
 
-We're looking forward to seeing what you can create! For more information on the backend api check [Backend API](#backend-api).
-
-For any questions feel free to email me at: belmpas.theofilos [at] praxis-eins.de
+For more information on the backend api check [Backend API](#backend-api).
 
 ***
 
