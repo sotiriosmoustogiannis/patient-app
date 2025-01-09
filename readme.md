@@ -1,4 +1,4 @@
-# take-home-fronteng
+# Patient App
 
 ![image](https://user-images.githubusercontent.com/18698923/235904899-cf3d4893-38d5-4ffc-ba9b-32cade454833.png)
 
